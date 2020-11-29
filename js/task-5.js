@@ -9,10 +9,20 @@
 // Но доставка есть не везде, если указанной страны нет в списке, то выводи в alert сообщение 
 // 'В вашей стране доставка не доступна'.
 
-// Ниже приведен список стран и стоимость доставки.
+let country = prompt('Введите страну доставки:');
+let deliveryCost;
 
-// Китай - 100 кредитов
-// Чили - 250 кредитов
-// Австралия - 170 кредитов
-// Индия - 80 кредитов
-// Ямайка - 120 кредитов
+switch (country.toLowerCase()) {
+    case 'китай': deliveryCost = 100; break;
+    case 'чили': deliveryCost = 250; break;
+    case 'австралия': deliveryCost = 170; break;
+    case 'индия': deliveryCost = 80; break;
+    case 'ямайка': deliveryCost = 120; break;
+    
+    default:
+        alert('В вашей стране доставка не доступна');
+}
+
+if (deliveryCost !== undefined) {
+    console.log(`Доставка в ${country} будет стоить ${deliveryCost} кредитов`);
+}
